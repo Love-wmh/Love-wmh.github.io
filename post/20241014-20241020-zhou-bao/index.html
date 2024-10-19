@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2024.10.14-2024.10.20周报 | Love?</title>
+<link rel="shortcut icon" href="https://Love-wmh.github.io/favicon.ico?v=1729340057833">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Love-wmh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="2024.10.14-2024.10.20周报 | Love? - Atom Feed" href="https://Love-wmh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="本周成果：
+
+理解并且利用二维数组完成OJ上的落花流水
+理解二维数组排布完成OJ上的神经激活模拟
+利用GitHub以及gridea简单搭建了自己的个人博客https://love-wmh.github.io/
+跟随学校课程规划更深入的了解数..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Love-wmh.github.io">
+  <img class="avatar" src="https://Love-wmh.github.io/images/avatar.png?v=1729340057833" alt="">
+  </a>
+  <h1 class="site-title">
+    Love?
+  </h1>
+  <p class="site-description">
+    保持热爱，奔赴山海
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://Love-wmh.github.io" class="menu">
+          海豹
+        </a>
+      
+    
+      
+        <a href="https://user.qzone.qq.com/2179669784" class="menu" target="_blank">
+          球球
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              2024.10.14-2024.10.20周报
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-10-19
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>本周成果：</p>
+<ol>
+<li>理解并且利用二维数组完成OJ上的落花流水</li>
+<li>理解二维数组排布完成OJ上的神经激活模拟</li>
+<li>利用GitHub以及gridea简单搭建了自己的个人博客https://love-wmh.github.io/</li>
+<li>跟随学校课程规划更深入的了解数据类型，完成CG上的题目</li>
+<li>利用篡改猴插入脚本获取网盘直链推送到Aira2和Motrix以此快速获得ADOBE2023的安装文件</li>
+<li>初步学习了指针，学习指针的调用<br>
+本周遗憾：</li>
+<li>尝试使用FakeLocation模拟闪动校园定位失败（硬件不支持）</li>
+<li>没有完成指针内容的学习</li>
+<li>学习c语言进度过慢<br>
+下周目标：</li>
+<li>及时完成英语月考备考</li>
+<li>完成指针与字符串数组的学习</li>
+<li>最好可以学一点前端知识美化一下自己的博客</li>
+<li>完成OJ的解锁和开关电灯</li>
+<li>复习所学的c语言基础做一下OJ前面的一些题目</li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Love-wmh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

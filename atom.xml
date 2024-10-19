@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Love-wmh.github.io</id>
+    <title>Love?</title>
+    <updated>2024-10-19T12:15:43.024Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Love-wmh.github.io"/>
+    <link rel="self" href="https://Love-wmh.github.io/atom.xml"/>
+    <subtitle>保持热爱，奔赴山海</subtitle>
+    <logo>https://Love-wmh.github.io/images/avatar.png</logo>
+    <icon>https://Love-wmh.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, Love?</rights>
+    <entry>
+        <title type="html"><![CDATA[2024.10.14-2024.10.20周报]]></title>
+        <id>https://Love-wmh.github.io/post/20241014-20241020-zhou-bao/</id>
+        <link href="https://Love-wmh.github.io/post/20241014-20241020-zhou-bao/">
+        </link>
+        <updated>2024-10-19T12:13:16.000Z</updated>
+        <content type="html"><![CDATA[<p>本周成果：</p>
+<ol>
+<li>理解并且利用二维数组完成OJ上的落花流水</li>
+<li>理解二维数组排布完成OJ上的神经激活模拟</li>
+<li>利用GitHub以及gridea简单搭建了自己的个人博客https://love-wmh.github.io/</li>
+<li>跟随学校课程规划更深入的了解数据类型，完成CG上的题目</li>
+<li>利用篡改猴插入脚本获取网盘直链推送到Aira2和Motrix以此快速获得ADOBE2023的安装文件</li>
+<li>初步学习了指针，学习指针的调用<br>
+本周遗憾：</li>
+<li>尝试使用FakeLocation模拟闪动校园定位失败（硬件不支持）</li>
+<li>没有完成指针内容的学习</li>
+<li>学习c语言进度过慢<br>
+下周目标：</li>
+<li>及时完成英语月考备考</li>
+<li>完成指针与字符串数组的学习</li>
+<li>最好可以学一点前端知识美化一下自己的博客</li>
+<li>完成OJ的解锁和开关电灯</li>
+<li>复习所学的c语言基础做一下OJ前面的一些题目</li>
+</ol>
+]]></content>
+    </entry>
+</feed>
