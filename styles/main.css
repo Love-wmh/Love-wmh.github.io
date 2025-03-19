@@ -1,14 +1,14 @@
 :root {
   --main-gradient: linear-gradient(
           -45deg,
-          hsl(000, 50%, 80%),   /* 浅红色（降低饱和度，提高亮度） */
-          hsl(060, 50%, 80%),  /* 浅黄色 */
-          hsl(120, 50%, 80%), /* 浅绿色 */
-          hsl(180, 50%, 80%), /* 浅青色 */
-          hsl(240, 50%, 80%), /* 浅蓝色 */
-          hsl(300, 50%, 80%), /* 浅紫色 */
-          hsl(360, 50%, 80%)  /* 回到浅红色 */
+          hsl(000, 50%, 80%), /* 浅红色（降低饱和度，提高亮度） */ hsl(060, 50%, 80%), /* 浅黄色 */ hsl(120, 50%, 80%), /* 浅绿色 */ hsl(180, 50%, 80%), /* 浅青色 */ hsl(240, 50%, 80%), /* 浅蓝色 */ hsl(300, 50%, 80%), /* 浅紫色 */ hsl(360, 50%, 80%) /* 回到浅红色 */
   );
+  --main-gradient-two: linear-gradient(
+          -60deg,
+          hsl(000, 80%, 80%), /* 浅红色（降低饱和度，提高亮度） */ hsl(060, 80%, 80%), /* 浅黄色 */ hsl(120, 80%, 80%), /* 浅绿色 */ hsl(180, 80%, 80%), /* 浅青色 */ hsl(240, 80%, 80%), /* 浅蓝色 */ hsl(300, 80%, 80%), /* 浅紫色 */ hsl(360, 80%, 80%) /* 回到浅红色 */
+  );
+  --main-font: "flowes", "华文新魏", "宋体", "楷体", sans-serif;
+  --main-font-color: #007bff;
 }
 
 @font-face {
@@ -28,7 +28,8 @@ a {
 
 .main {
   width: 100%;
-  background: url("../images/main-bac.jpg");
+  /*background: url("../images/main-bac.jpg");*/
+  background: linear-gradient(to right, #ff6b6b, #4ecdc4);
   background-size: contain;
 }
 
@@ -67,19 +68,24 @@ nav {
   flex-grow: 1;
 }
 
-.nav-list ul{
+.nav-list>ul {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.nav-list ul li {
+.nav-list>ul>li {
   height: 80%;
   line-height: 3.2rem;
   background-color: transparent;
   text-align: center;
   border-radius: 0.5rem;
   margin: 0 0.8rem;
+}
+
+.nav-list>ul>li:first-child {
+  position: relative;
+  right: 25rem;
 }
 
 .nav-list ul li:hover {
@@ -96,11 +102,13 @@ nav {
 }
 
 .post-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  flex-grow: 1;
   margin: 0 auto;
   background: url("../images/pag-bac.jpg") no-repeat;
+  overflow: auto;
   /*background-color: #2fcd3d;*/
 }
 
@@ -108,11 +116,13 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 0;
   border: 0.2rem solid #f4ce6b;
-  margin: 0.2rem 0;
-  height: 10rem;
-  width: 100%;
   border-radius: 0.5rem;
+  margin: 0.2rem 0;
+  /*height: 10rem;*/
+  width: 100%;
+  height: 10rem;
   background-color: rgba(145, 113, 255, 0.68);
 }
 
@@ -145,7 +155,7 @@ nav {
 }
 
 .post-container article a h2 {
-  font-family: "flowes","华文新魏","宋体","楷体", sans-serif;
+  font-family: "flowes", "华文新魏", "宋体", "楷体", sans-serif;
   font-size: 2.2rem;
   display: block !important;
   position: relative;
@@ -166,4 +176,174 @@ article span:nth-of-type(2) {
 
 .my-details {
   color: transparent;
+}
+
+.middle {
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.middle-two {
+  flex-grow: 3;
+  max-width: 29.43rem;
+  overflow: auto;
+  border: 0.2rem solid #f4ce6b;
+  border-radius: 0.5rem;
+}
+
+.middle-three::-webkit-scrollbar,
+.post-container::-webkit-scrollbar,
+.middle-two::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none;
+}
+
+.middle-three {
+  display: flex;
+  flex-direction: column;
+  border: 0.2rem solid #f4ce6b;
+  border-radius: 0.5rem;
+  flex-grow: 2;
+  overflow: auto;
+}
+
+.middle-three .todo-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  background: var(--main-gradient-two);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.middle-three .todo-logo span {
+  line-height: 4rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-family: var(--main-font), serif;
+  font-size: 1.9rem;
+  color: #5106c3;
+}
+
+.middle-three .todo-logo svg {
+  margin-left: 0.5rem;
+}
+
+.todo-input {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 2.3rem;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 0.5rem;
+}
+
+.todo-input input {
+  height: 90%;
+  width: 60%;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 0 0.4rem 0.2rem #30f8e5;
+}
+
+.todo-input button:hover,
+.todo-input input:focus {
+  outline: none;
+  box-shadow: 0 0 0.5rem 0.3rem #9d51fa;
+}
+
+.todo-input button {
+  border: none;
+  border-radius: 0.5rem;
+  height: 90%;
+  width: 10%;
+  box-shadow: 0 0 0.4rem 0.2rem #30f8e5;
+  color: var(--main-font-color);
+}
+
+.middle-three ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-three ul li{
+  padding: 0;
+  height: 3rem;
+  width: 90%;
+  list-style: none;
+  margin: 0.5rem 0;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.todo-in-box {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 2rem;
+}
+
+.todo-in-box:hover {
+  transform: translateX(-5rem);
+  transition: 0.5s;
+}
+
+.todo-in-box>div {
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  width: 100%;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.todo-in-box>div>span {
+  line-height: 3rem;
+  font-family: var(--main-font), serif;
+  color: var(--main-font-color);
+  font-size: 1.5rem;
+}
+
+.todo-in-box>button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-shrink: 0;
+  width: 5rem;
+  border: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  color: #4124ff;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+.todo-in-box>button svg {
+  margin-left: 0.2rem;
+}
+
+.site-footer {
+  text-align: center;
+}
+
+#snake {
+  width: 29rem;
+}
+
+.middle-two div[class="snake"] {
+
 }

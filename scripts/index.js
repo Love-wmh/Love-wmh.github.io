@@ -21,3 +21,28 @@ navItems.addEventListener('click',function(){
   setTimeout(navTransition,800);
 })
 
+const todo =new Vue({
+  el:'#todo',
+  data:{
+    message:'',
+    todoList:[
+      { id : 1, text: '学习java' },
+      { id : 2, text: '学习Vue' },
+      { id : 3, text: '学习高等数学'},
+    ],
+  },
+  methods:{
+    addTodo:function(){
+      if(this.message===''){
+        alert("请输入内容");
+        return;
+      }
+      this.todoList.unshift({id:this.todoList.length+1,text:this.message});
+      this.message = '';
+    },
+    removeTodo:function(todoId){
+      this.todoList = this.todoList.filter(item => item.id !== todoId)
+    }
+
+  }
+})
