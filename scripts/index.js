@@ -46,3 +46,11 @@ const todo =new Vue({
 
   }
 })
+
+window.onload = function() {
+  fetch('m.md')
+      .then(response => response.text())
+      .then(text => {
+          document.querySelector('.markdown-content').innerHTML = marked.parse(text);
+      });
+};
