@@ -1,0 +1,47 @@
+name: 静态站点部署到GitHub Pages
+
+on:
+  push:
+    branches: ["main"]  # 仅监听main分支的推送
+  workflow_dispatch:    # 支持手动触发
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false  # 允许正在运行的部署完成
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}  # 自动获取部署后的URL
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整提交历史（某些静态生成器需要）
+
+      # ▼ 如果是需要构建的项目（如Vue/React），在此插入构建步骤 ▼
+      # - name: 安装依赖
+      #   run: npm install
+      # - name: 构建项目
+      #   run: npm run build
+
+      - name: 配置Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传制品
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'  # 关键修改：指定部署目录为dist/
+          # 如果使用根目录则改为 '.'
+
+      - name: 部署到GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
