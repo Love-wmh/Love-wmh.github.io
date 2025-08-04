@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/Love-wmh.github.io/',
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    emptyOutDir: true
   }
 })
