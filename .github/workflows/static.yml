@@ -1,0 +1,32 @@
+name: Deploy Static Blog to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    # 仅在dist目录或相关配置文件变更时触发，可选
+    paths:
+      - 'dist/**'
+      - '.github/workflows/static.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # 确保获取完整历史，对于大型项目可能需要
+          fetch-depth: 0
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # 使用GitHub提供的token进行授权
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 指定要部署的目录
+          publish_dir: ./dist
+          # 可选：设置提交信息
+          commit_message: 'Deploy static files: ${{ github.sha }}'
+          # 可选：部署到gh-pages分支的根目录
+          destination_dir: .
