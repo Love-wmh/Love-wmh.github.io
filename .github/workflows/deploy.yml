@@ -14,13 +14,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: 'pnpm'  # Changed from 'npm' to 'pnpm'
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install  # Changed from 'npm ci' to 'pnpm install'
 
       - name: Build
-        run: npm run build
+        run: pnpm run build  # Changed from 'npm run build' to 'pnpm run build'
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
