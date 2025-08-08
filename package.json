@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "https://Love-wmh.github.io/",
   "scripts": {
+    "start": "react start",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -12,7 +13,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -b main",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "buildTwo": "tsc -b && vite build --base=./"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
