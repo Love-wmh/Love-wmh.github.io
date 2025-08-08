@@ -1,0 +1,21 @@
+module.exports = {
+  // 无分号模式
+  semi: false,
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  singleQuote: true,
+  quoteProps: 'as-needed',
+  trailingComma: 'es5',
+  bracketSpacing: true,
+  arrowParens: 'always',
+  rangeStart: 0,
+  rangeEnd: Infinity,
+  requirePragma: false,
+  insertPragma: false,
+  proseWrap: 'preserve',
+  htmlWhitespaceSensitivity: 'css',
+  endOfLine: 'lf',
+  embeddedLanguageFormatting: 'auto',
+  singleAttributePerLine: false,
+};
