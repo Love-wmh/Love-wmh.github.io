@@ -1,10 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom'
 
 import App from '../App'
-import Home from '../pages/Home/index.tsx';
-import Articles from '../pages/Articles/index.tsx';
-import ArticleDetail from '../pages/ArticleDetail/index.tsx';
-import About from '../pages/About';
+import Home from '../pages/Home'
+import Articles from '../pages/Articles/index.tsx'
+import ArticleDetail from '../pages/ArticleDetail/index.tsx'
+import About from '../pages/About'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,6 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> }
     ]
   }
-]);
+])
 
-export default router;
+export default router
