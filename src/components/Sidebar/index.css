@@ -1,0 +1,7 @@
+.sidebar {
+  background: var(--bg-color);
+  position: sticky;
+  top: 60px;
+  width: 300px;
+  height: 100%;
+}

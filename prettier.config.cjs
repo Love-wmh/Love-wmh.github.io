@@ -6,7 +6,8 @@ module.exports = {
   useTabs: false,
   singleQuote: true,
   quoteProps: 'as-needed',
-  trailingComma: 'es5',
+  // 将尾随逗号设置为none以移除所有场景下的尾随逗号
+  trailingComma: 'none',
   bracketSpacing: true,
   arrowParens: 'always',
   rangeStart: 0,
@@ -17,5 +18,5 @@ module.exports = {
   htmlWhitespaceSensitivity: 'css',
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'auto',
-  singleAttributePerLine: false,
-};
+  singleAttributePerLine: false
+}
