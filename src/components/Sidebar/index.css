@@ -5,3 +5,14 @@
   width: 300px;
   height: 100%;
 }
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar-title {
+  color: var(--text-color);
+}
+.more {
+  display: block;
+}

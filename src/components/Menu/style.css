@@ -1,0 +1,63 @@
+/* 菜单项容器 */
+.menu-items {
+  padding: 20px 0;
+}
+
+/* 基础菜单项样式 */
+.menu-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.menu-item:hover {
+  background-color: var(--box-bg-color);
+}
+
+/* 菜单项文本 */
+.menu-item-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 子菜单箭头 */
+.submenu-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #666;
+  transition: transform 0.3s ease;
+}
+
+/* 箭头旋转动画 */
+.submenu-arrow.open {
+  transform: rotate(90deg);
+}
+
+/* 子菜单容器 */
+.submenu-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* 子菜单展开状态 */
+.submenu-items.open {
+  max-height: 500px; /* 足够大的值以容纳子菜单 */
+}
+
+/* 多级菜单缩进 */
+.menu-item.level-1 .menu-item-label {
+  padding-left: 15px;
+}
+
+.menu-item.level-2 .menu-item-label {
+  padding-left: 30px;
+}
+
+.menu-item.level-3 .menu-item-label {
+  padding-left: 45px;
+}

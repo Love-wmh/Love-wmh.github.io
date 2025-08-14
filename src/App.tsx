@@ -20,6 +20,9 @@ const MainContent = styled.main`
 const ContentArea = styled.div`
   flex: 1;
   margin-right: 2rem;
+  @media (max-width: ${(props) => props.theme.modelMaxWidth}) {
+    margin-right: 0;
+  }
 `
 
 function App() {

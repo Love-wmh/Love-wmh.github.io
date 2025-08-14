@@ -16,5 +16,13 @@ declare module 'styled-components' {
     scrollbarTrack: string
     // 滚动条滑块颜色
     scrollbarThumb: string
+    // skill盒子背景颜色
+    boxBgColor: string
+    // skill字体颜色
+    boxTextColor: string
+    // 项目页面的skills的字体颜色
+    projectSkillColor: string
+    // 移动端最大屏幕宽度
+    modelMaxWidth: string
   }
 }

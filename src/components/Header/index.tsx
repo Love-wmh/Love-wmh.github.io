@@ -1,76 +1,14 @@
-import { Link, NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import { HeaderContainer, Nav, StyledNavLink, Logo, ToggleThemeButton } from './style'
 import dog from '@/assets/images/dog.svg'
 import more from '@/assets/images/more.svg'
 import { useTheme } from '@/contexts/ThemeContext'
-
-// 组件容器样式
-const HeaderContainer = styled.header`
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background: ${(props) => props.theme.headerBgColor};
-`
-// 内部总容器样式
-const Nav = styled.nav`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1rem 2rem;
-
-  .nav-ul {
-    margin-left: auto;
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  .nav-title {
-    margin-left: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: ${(props) => props.theme.textColor};
-  }
-  @media (max-width: 1000px) {
-    .nav-title {
-      display: none;
-    }
-  }
-  .more {
-    filter: invert(100%);
-  }
-  @media (min-width: 768px) {
-    .more {
-      display: none;
-    }
-  }
-`
-// 自定义导航链接样式
-const StyledNavLink = styled(NavLink)`
-  color: ${(props) => props.theme.textColor};
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-
-  &.active {
-    color: ${(props) => props.theme.accentColor};
-    font-weight: bold;
-    border-bottom: 2px solid ${(props) => props.theme.accentColor};
-  }
-  &:hover {
-    color: ${(props) => props.theme.accentColor};
-    transform: translateY(-2px);
-  }
-`
-const Logo = styled(Link)``
+import Drawer from '@/components/Drawer'
+import { menuData } from '@/store/anchors'
+import { useState } from 'react'
 
 export const Header = () => {
   const { toggleTheme, themeType } = useTheme()
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
     <HeaderContainer>
       <Nav>
@@ -96,9 +34,31 @@ export const Header = () => {
           <li>
             <StyledNavLink to="https://github.com/Love-wmh">GitHub</StyledNavLink>
           </li>
+          <li></li>
         </ul>
-        <img src={more} alt="" className="more" width={30} height={30} />
-        <button onClick={toggleTheme}>{themeType === 'light' ? '切换到暗色' : '切换到亮色'}</button>
+        {/* 移动端展开菜单按钮 */}
+        <img
+          src={more}
+          alt="菜单"
+          className="more"
+          width={30}
+          height={30}
+          onClick={() => setIsDrawerOpen(true)}
+        />
+        <ToggleThemeButton onClick={toggleTheme} className="header-theme-btn">
+          {themeType === 'dark' ? '开灯' : '关灯'}
+        </ToggleThemeButton>
+        {/* 抽屉组件 */}
+        <Drawer
+          isOpen={isDrawerOpen}
+          direction="left"
+          menuItems={menuData}
+          onClose={() => setIsDrawerOpen(false)}
+          onMenuItemClick={(id) => {
+            console.log('点击了菜单项:', id)
+            setIsDrawerOpen(false) // 点击后关闭抽屉
+          }}
+        />
       </Nav>
     </HeaderContainer>
   )

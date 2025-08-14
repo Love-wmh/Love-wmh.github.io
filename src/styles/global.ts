@@ -3,17 +3,31 @@ import './variables.css'
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --model-max-width: ${(props) => props.theme.modelMaxWidth};
     --bg-color: ${(props) => props.theme.backgroundColor};
     --text-color: ${(props) => props.theme.textColor};
     --header-bg: ${(props) => props.theme.headerBgColor};
     --accent-color: ${(props) => props.theme.accentColor};
     --scrollbar-track: ${(props) => props.theme.scrollbarTrack};
     --scrollbar-thumb: ${(props) => props.theme.scrollbarThumb};
+    --box-bg-color: ${(props) => props.theme.boxBgColor};
+    --box-text-color: ${(props) => props.theme.boxTextColor};
+    --project-skill-color: ${(props) => props.theme.projectSkillColor};
   }
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  html {
+    // 平滑滚动
+    scroll-behavior: smooth;
+    @media (max-width: ${(props) => props.theme.modelMaxWidth}) {
+      font-size: 12px;
+    }
+  }
+  [id] {
+    scroll-margin-top: 60px;
   }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,12 +41,12 @@ const GlobalStyle = createGlobalStyle`
   }
   /* 滚动条轨道 */
   ::-webkit-scrollbar-track {
-    background: #2c2c2c;
+    background: ${(props) => props.theme.scrollbarTrack};
     border-radius: 0;
   }
   /* 滚动条滑块 */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: ${(props) => props.theme.scrollbarThumb};
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
