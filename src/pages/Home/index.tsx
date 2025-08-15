@@ -18,7 +18,7 @@ const Home = () => {
     <HomeContainer>
       {/* 个人简介 */}
       <SkillTitle id="my-profile">My Profile</SkillTitle>
-      <p className="intro">记录我的技术学习历程和重要成就，见证从入门到熟练的成长轨迹。</p>
+      <p className="intro">编码，创造，计算，做饭，羽毛球......</p>
       {/* skills */}
       <SkillsContainer>
         <SkillTitle id="my-skills">My Skills</SkillTitle>

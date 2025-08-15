@@ -34,7 +34,24 @@ export const skills = [
   'TypeScript',
   'Styled Components',
   'Git',
-  'Vite'
+  'Vite',
+  'Redux',
+  'Vue3',
+  'Vue2',
+  'Node.js',
+  'Express',
+  'MongoDB',
+  'Docker',
+  'Webpack',
+  'React Native',
+  'Electron',
+  'ElementPlus',
+  'SQLite',
+  'Python3',
+  'C++',
+  'C',
+  'ECharts',
+  'PowerShell'
 ]
 // 项目列表的数据接口定义
 export interface Project {

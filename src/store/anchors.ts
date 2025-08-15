@@ -96,27 +96,5 @@ export const menuData = [
         path: '/projects#project2'
       }
     ]
-  },
-  {
-    id: '4',
-    label: '关于',
-    path: '/about',
-    children: [
-      {
-        id: '4-1',
-        label: '个人简介',
-        path: '/about#profile'
-      },
-      {
-        id: '4-2',
-        label: '技能',
-        path: '/about#skills'
-      },
-      {
-        id: '4-3',
-        label: '经历',
-        path: '/about#experience'
-      }
-    ]
   }
 ]

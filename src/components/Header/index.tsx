@@ -28,9 +28,9 @@ export const Header = () => {
           <li>
             <StyledNavLink to="/projects">项目</StyledNavLink>
           </li>
-          <li>
-            <StyledNavLink to="/about">关于</StyledNavLink>
-          </li>
+          {/*<li>*/}
+          {/*  <StyledNavLink to="/about">关于</StyledNavLink>*/}
+          {/*</li>*/}
           <li>
             <StyledNavLink to="https://github.com/Love-wmh">GitHub</StyledNavLink>
           </li>
