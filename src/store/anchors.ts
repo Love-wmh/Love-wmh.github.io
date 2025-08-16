@@ -1,9 +1,11 @@
 import { projects } from './data'
+import { articles } from './articlesData'
 
 // 锚点数据接口
 export interface AnchorItem {
   id: string
   label: string
+  children?: AnchorItem[]
 }
 // 页面锚点数据
 export const pageAnchors = {
@@ -26,12 +28,28 @@ export const pageAnchors = {
     { id: 'skills', label: '技术栈' },
     { id: 'experience', label: '经历' }
   ],
-  '/articles': [
-    // 文章列表页锚点
-    { id: 'latest', label: '最新文章' },
-    { id: 'popular', label: '热门文章' },
-    { id: 'archive', label: '文章归档' }
-  ]
+  '/articles': articles.reduce((acc, article) => {
+    const existingCategory = acc.find((item) => item.label === article.category)
+    if (existingCategory) {
+      existingCategory.children = existingCategory.children || []
+      existingCategory.children.push({
+        id: `article-${article.id}`,
+        label: article.title
+      })
+    } else {
+      acc.push({
+        id: `category-${article.category}`,
+        label: article.category,
+        children: [
+          {
+            id: `article-${article.id}`,
+            label: article.title
+          }
+        ]
+      })
+    }
+    return acc
+  }, [] as AnchorItem[])
 }
 export interface MenuItemData {
   id: string

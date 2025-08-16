@@ -16,3 +16,12 @@
 .more {
   display: block;
 }
+.anchor-item {
+  margin-bottom: 0.5rem;
+}
+
+.sub-anchors {
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+  border-left: 1px solid var(--accent-color);
+}

@@ -6,6 +6,7 @@ export type Article = {
   excerpt: string
   category: string
 }
+
 export const articles: Article[] = [
   {
     id: 1,

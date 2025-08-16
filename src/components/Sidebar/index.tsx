@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { pageAnchors, type AnchorItem } from '@/store/anchors.ts'
 import './index.css'
+import React from 'react'
 
 // 锚链接样式组件
 const AnchorLink = styled.a`
@@ -16,7 +17,20 @@ const AnchorLink = styled.a`
     color: ${(props) => props.theme.accentColor};
   }
 `
-
+const AnchorItemComponent: React.FC<{ anchor: AnchorItem }> = ({ anchor }) => {
+  return (
+    <div className="anchor-item">
+      <AnchorLink href={`#${anchor.id}`}>{anchor.label}</AnchorLink>
+      {anchor.children && (
+        <div className="sub-anchors">
+          {anchor.children.map((child) => (
+            <AnchorItemComponent key={child.id} anchor={child} />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 export default function Sidebar() {
   const location = useLocation()
   // 使用state存储当前锚点，确保路由变化时触发重渲染
@@ -32,9 +46,7 @@ export default function Sidebar() {
       <h3 className="sidebar-title">本页导航</h3>
       <div className="anchor-list">
         {currentAnchors.map((anchor) => (
-          <AnchorLink key={anchor.id} href={`#${anchor.id}`}>
-            {anchor.label}
-          </AnchorLink>
+          <AnchorItemComponent key={anchor.id} anchor={anchor} />
         ))}
       </div>
     </div>

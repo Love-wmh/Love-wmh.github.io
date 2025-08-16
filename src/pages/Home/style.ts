@@ -159,6 +159,7 @@ export const SkillsGrid = styled.div`
   justify-content: flex-start; // 从左侧开始排列
   @media (max-width: ${(props) => props.theme.modelMaxWidth}) {
     gap: 0.5rem;
+    justify-content: space-between;
   }
 `
 // 技能方块

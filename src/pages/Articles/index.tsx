@@ -13,7 +13,7 @@ const Articles = () => {
               <ArticleDate>{article.date}</ArticleDate>
             </MetadataContainer>
             <ArticleExcerpt>{article.excerpt}</ArticleExcerpt>
-            <ReadMoreLink>阅读全文 →</ReadMoreLink>
+            <ReadMoreLink href={`/articles/${article.id}`}>阅读全文 →</ReadMoreLink>
           </ArticleCard>
         ))}
       </ArticlesGrid>
@@ -60,7 +60,7 @@ const MetadataContainer = styled.div`
   margin-bottom: 1rem;
 `
 
-const CategoryBadge = styled.span`
+export const CategoryBadge = styled.span`
   background: ${(props) => props.theme.accentColor};
   color: ${(props) => props.theme.projectSkillColor};
   padding: 0.3rem 0.6rem;
@@ -80,7 +80,7 @@ const ArticleTitle = styled.h3`
   }
 `
 
-const ArticleDate = styled.span`
+export const ArticleDate = styled.span`
   color: ${(props) => props.theme.textColor};
   opacity: 0.8;
   font-size: 0.9rem;
@@ -99,9 +99,29 @@ const ReadMoreLink = styled.a`
   text-decoration: none;
   font-weight: 500;
   transition: transform 0.2s ease;
-
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* 距离文字底部5px */
+    left: 50%; /* 初始位置居中 */
+    width: 0; /* 初始宽度为0 */
+    height: 2px;
+    background-color: ${(props) => props.theme.accentColor}; /* 下划线颜色为强调色 */
+    transition:
+      width 0.3s ease,
+      left 0.3s ease; /* 宽度和位置过渡动画 */
+  }
+  /* hover效果 */
   &:hover {
     transform: translateX(5px);
+    border-left: transparent solid 3px;
+    cursor: pointer;
+    color: ${(props) => props.theme.accentColor}; /* 文字变为强调色 */
+    /* 下划线从中间向两边展开 */
+    &:after {
+      width: 100%; /* 宽度变为100% */
+      left: 0; /* 位置从左开始 */
+    }
   }
 `
 
