@@ -11,11 +11,10 @@ export interface ArticlesDetail {
 // 文章详情内容数据源 (实际项目中可从文件或API获取)
 const articleContents: { [key: string]: string } = {
   '1': ``,
-  '2': '# React组件设计模式\n\nReact组件设计模式包括...',
-  '3': '# CSS Grid布局\n\nCSS Grid是一种二维布局系统...',
-  '4': '# Node.js性能优化\n\nNode.js性能优化涉及多个方面...'
+  '2': '',
+  '3': '',
+  '4': ''
 }
-// ... existing code ...
 // 添加索引签名以支持字符串索引
 const articleTags: { [key: string]: string[] } = {
   '1': ['TypeScript', '类型系统', '三斜杠指令'],

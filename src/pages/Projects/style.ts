@@ -47,7 +47,7 @@ export const ProjectHeader = styled.div`
 
 // 项目名称
 export const ProjectName = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0;
   color: ${(props) => props.theme.accentColor};
 `

@@ -19,7 +19,7 @@ export const pageAnchors = {
     // 根据projects数据动态生成的项目锚点
     ...projects.map((project) => ({
       id: project.linkID,
-      label: project.linkLabel
+      label: project.name
     }))
   ],
   '/about': [
